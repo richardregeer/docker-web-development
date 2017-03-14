@@ -33,5 +33,5 @@ Make sure the -rm option is used to destroy the container when it's finished.
 docker run -it --rm --volume=</path/to/your/code>:/development web-development node <your-application.js>
 
 # Start a php web application in the container.
-docker run -it --rm --volume=</path/to/your/code>:/development web-development php -S 0.0.0.0:8000
+docker run -it --rm --volume=</path/to/your/code>:/development -p 8000:8000 web-development php -S 0.0.0.0:8000
 ```
