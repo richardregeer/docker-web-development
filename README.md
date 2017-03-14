@@ -1,7 +1,7 @@
 # Docker web development
 This container can be used for doing all your php and node web development needs. Like running unit tests, linting, creating coverage reports and running your application.
 
-## Software installed:
+# Software installed:
  - php 7.0.16
  - xdebug 2.5.1
  - composer 1.4.1
