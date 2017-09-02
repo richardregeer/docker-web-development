@@ -1,16 +1,15 @@
 FROM ubuntu:16.04
 
-LABEL maintainer "rich2309@gmail.com"
+LABEL maintainer "Richard Regeer" \
+      email="rich2309@gmail.com"
 
-RUN apt-get update \
+RUN apt-get update --fix-missing \
   && apt-get install -y \
-    curl mysql-client-5.7 postgresql-client nano git bzip2 unzip libzip-dev locales \
-  && curl -LO https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb \
-  && dpkg -i dumb-init_*.deb \
+    curl mysql-client-5.7 postgresql-client sqlite3 vim git bzip2 unzip libzip-dev locales \
   && apt-get clean \
   && rm -rf /dumb-init_1.2.0_amd64.deb /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ENV NODE_VERSION 6.11.1
+ENV NODE_VERSION 6.11.2
 ENV YARN_VERSION 0.27.5
 
 # Install nodejs and yarn and nodejs tools
@@ -23,7 +22,7 @@ RUN curl -LOk https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
   && yarn global add gulp@3.9.1 \
   && yarn cache clean
 
-ENV PHP_VERSION 7.0.20
+ENV PHP_VERSION 7.0.23
 ENV XDEBUG_VERSION 2_5_5
 
 # Copy phpinfo test page and php configuration
@@ -96,9 +95,9 @@ RUN curl -o php-$PHP_VERSION.tar.gz -L http://php.net/get/php-$PHP_VERSION.tar.g
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false build-essential autoconf pkg-config \
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+
 # Expose the ports for php info.
-EXPOSE 8000
+EXPOSE 8000 
 
 WORKDIR /development
-
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
