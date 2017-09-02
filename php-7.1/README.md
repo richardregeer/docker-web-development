@@ -1,8 +1,8 @@
-# Docker web development PHP 7.0
+# Docker web development PHP 7.1
 This container can be used for doing all your php and node web development needs. Like running unit tests, linting, creating coverage reports and running your application.
 
 ## Software installed:
- - php 7.0
+ - php 7.1
     - bcmath
     - cli
     - ftp
@@ -38,7 +38,7 @@ This container can be used for doing all your php and node web development needs
 ## Verify php installation
 The verify the php installation and get the configuration a container can be started:
 ```bash
-docker run -it --rm -p 8000:8000 -w /usr/local/src/phpinfo web-development:php-7.0 php -S 0.0.0.0:8000
+docker run -it --rm -p 8000:8000 -w /usr/local/src/phpinfo web-development:php-7.1 php -S 0.0.0.0:8000
 # Open localhost:8000 in your browser.
 ```
 Open the [test page](http://loclhost:8000) in your browser
@@ -49,17 +49,17 @@ Make sure the -rm option is used to destroy the container when it's finished.
 
 ```bash
 # Start a node application in the container.
-docker run -it --rm --volume=</path/to/your/code>:/development web-development:php-7.0 node <your-application.js>
+docker run -it --rm --volume=</path/to/your/code>:/development web-development:php-7.1 node <your-application.js>
 
 # Start a php web application in the container.
-docker run -it --rm --volume=</path/to/your/code>:/development -p 8000:8000 web-development:php-7.0 php -S 0.0.0.0:8000
+docker run -it --rm --volume=</path/to/your/code>:/development -p 8000:8000 web-development:php-7.1 php -S 0.0.0.0:8000
 ```
 
 ### Start with XDebug
 Xdebug needs to connect to the localhost, you need to expose the ip adres of the host so Xdebug can connect.
 ```bash
 # Start a php web application in the container.
-docker run -it --rm --add-host docker_host:<ip-of-host> --volume=</path/to/your/code>:/development -p 8000:8000 web-development:php-7.0 php -S 0.0.0.0:8000
+docker run -it --rm --add-host docker_host:<ip-of-host> --volume=</path/to/your/code>:/development -p 8000:8000 web-development:php-7.1 php -S 0.0.0.0:8000
 
 # Use this command to see your ip adres
 (ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | sed -n 1p)
