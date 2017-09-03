@@ -7,7 +7,7 @@ RUN apt-get update --fix-missing \
   && apt-get install -y \
     curl mysql-client-5.7 postgresql-client sqlite3 vim git bzip2 unzip libzip-dev locales \
   && apt-get clean \
-  && rm -rf /dumb-init_1.2.0_amd64.deb /tmp/* /var/lib/apt/lists/* /var/tmp/*
+  && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 ENV NODE_VERSION 6.11.2
 ENV YARN_VERSION 0.27.5
