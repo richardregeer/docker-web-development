@@ -31,8 +31,8 @@ This container can be used for doing all your php and node web development needs
  - postgress sql client
  - sqlite3
  - curl
- - node 6.11.2
- - yarn 0.27.5
+ - node 6.11.3
+ - yarn 1.0.2
  - gulp 3.9.1
 
 ## Verify php installation

@@ -2,8 +2,8 @@
 This container can be used for doing all your node web development needs. Like running unit tests, linting, creating coverage reports and running your application.
 
 ## Software installed:
- - node 8.4.0
- - yarn 0.27.5
+ - node 8.5.0
+ - yarn 1.0.2
  - gulp 3.9.1
  - mysql client
  - postgress sql client
@@ -13,7 +13,7 @@ This container can be used for doing all your node web development needs. Like r
 ## Verify installation
 The verify the node installation:
 ```bash
-docker run -it --rm richardregeer/web-development:node-8.4 node -v
+docker run -it --rm richardregeer/web-development:node-8 node -v
 ```
 
 ## How to use the container
@@ -24,5 +24,5 @@ Port 3000 is exposed and can be used for development.
 
 ```bash
 # Start a node application in the container.
-docker run -it --rm --volume=</path/to/your/code>:/development richardregeer/web-development:node-8.4 node <your-application.js>
+docker run -it --rm --volume=</path/to/your/code>:/development richardregeer/web-development:node-8 node <your-application.js>
 ```
