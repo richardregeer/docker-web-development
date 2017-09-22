@@ -9,8 +9,8 @@ RUN apt-get update --fix-missing \
   && apt-get clean \
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ENV NODE_VERSION 6.8.4
-ENV YARN_VERSION 0.27.5
+ENV NODE_VERSION 8.5.0
+ENV YARN_VERSION 1.0.2
 
 # Install nodejs and yarn and nodejs tools
 RUN curl -LOk https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz \
