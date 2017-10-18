@@ -2,13 +2,7 @@
 This container can be used for doing all your node web development needs. Like running unit tests, linting, creating coverage reports and running your application.
 
 ## Software installed:
- - node 6.11.3
- - yarn 1.0.2
- - gulp 3.9.1
- - mysql client
- - postgress sql client
- - sqlite3
- - curl
+Node 6 and for more information about the installed tools se the [readme](../base/README.md) of the base image.
 
 ## Verify installation
 The verify the node installation:

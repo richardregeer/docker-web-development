@@ -48,7 +48,7 @@ RUN curl -LOk https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
   && yarn global add uuid@3.1.0 \
   && yarn cache clean
 
-# Expose a ports for development.
+# Expose a port for development.
 EXPOSE 3000 
 
 WORKDIR /development

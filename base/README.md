@@ -2,8 +2,8 @@
 This container is used as a base for different web development environments and contains tools that can help with your web development projects. 
 
 ## Software installed:
- - node 6.11.3
- - yarn 1.0.2
+ - node 6.11.4
+ - yarn 1.2.1
  - gulp 3.9.1
  - uuid
  - powershell 6
