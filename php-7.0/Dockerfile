@@ -8,9 +8,9 @@ RUN apt-get update --fix-missing \
     curl mysql-client-5.7 postgresql-client sqlite3 vim git bzip2 unzip libzip-dev locales \
   && apt-get clean \
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-
-ENV NODE_VERSION 6.11.3
-ENV YARN_VERSION 1.0.2
+  
+ENV NODE_VERSION 6.11.4
+ENV YARN_VERSION 1.2.1
 
 # Install nodejs and yarn and nodejs tools
 RUN curl -LOk https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz \
