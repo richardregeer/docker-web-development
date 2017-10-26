@@ -41,7 +41,7 @@ The verify the php installation and get the configuration a container can be sta
 docker run -it --rm -p 8000:8000 -w /usr/local/src/phpinfo richardregeer/web-development:php-7.0 php -S 0.0.0.0:8000
 # Open localhost:8000 in your browser.
 ```
-Open the [test page](http://loclhost:8000) in your browser
+Open the [test page](http://localhost:8000) in your browser
 
 ## How to use the container
 Use a shared volume from a data container or host volume to share your code and start the program on the container.
