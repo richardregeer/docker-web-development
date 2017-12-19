@@ -27,13 +27,8 @@ This container can be used for doing all your php and node web development needs
     - zlib
  - xdebug 2.5.5
  - composer
- - mysql client
- - postgress sql client
- - sqlite3
- - curl
- - node 6.11.3
- - yarn 1.0.2
- - gulp 3.9.1
+ 
+For more information about the installed tools se the [readme](../base/README.md) of the base image.
 
 ## Verify php installation
 The verify the php installation and get the configuration a container can be started:
