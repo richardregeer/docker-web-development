@@ -3,7 +3,7 @@ FROM richardregeer/web-development:base
 LABEL maintainer "Richard Regeer" \
       email="rich2309@gmail.com"
 
-ENV PHP_VERSION 7.1.10
+ENV PHP_VERSION 7.1.12
 ENV XDEBUG_VERSION 2_5_5
 
 # Copy phpinfo test page and php configuration
