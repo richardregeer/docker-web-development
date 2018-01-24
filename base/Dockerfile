@@ -21,6 +21,7 @@ RUN apt-get install -y \
     git \
     subversion \
     bzip2 \
+    zip \
     unzip \
     libzip-dev \
     locales \

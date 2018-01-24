@@ -18,5 +18,6 @@ This container is used as a base for different web development environments and 
  - nano
  - git 
  - subversion
- - bzip2 
+ - bzip2
+ - zip 
  - unzip
