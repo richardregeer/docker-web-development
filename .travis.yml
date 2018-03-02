@@ -1,0 +1,16 @@
+language: bash
+
+services: docker
+
+env:
+  - VARIANT=base
+  - VARIANT=node-6
+  
+before_script:
+  - cd base
+
+script:
+  - docker build -t test .
+ 
+after_script:
+  - docker images
