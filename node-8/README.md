@@ -1,11 +1,11 @@
 # Docker web development Node 8
-This container can be used for doing all your node web development needs. Like running unit tests, linting, creating coverage reports and running your application.
+This container can be used for doing all your node web development needs. Like running unit tests, linting, creating coverage reports and running your application with [nodejs](https://nodejs.org/en/).
 
-## Software installed:
-Node 8 and for more information about the installed tools se the [readme](../base/README.md) of the base image.
+## Installed software:
+This image contains node 8. For more information about the installed tools see the [readme](../base/README.md) of the base image.
 
 ## Verify installation
-The verify the node installation:
+To verify the node installation:
 ```bash
 docker run -it --rm richardregeer/web-development:node-8 node -v
 ```
@@ -14,9 +14,9 @@ docker run -it --rm richardregeer/web-development:node-8 node -v
 Use a shared volume from a data container or host volume to share your code and start the program on the container.
 Make sure the -rm option is used to destroy the container when it's finished.
 
-Port 3000 is exposed and can be used for development.
+Port 3000 is exposed and can be used for development. The default working directory of the image is /development.
 
 ```bash
 # Start a node application in the container.
-docker run -it --rm --volume=</path/to/your/code>:/development richardregeer/web-development:node-8 node <your-application.js>
+docker run -it --rm -v </path/to/your/code>:/development richardregeer/web-development:node-8 node <your-application.js>
 ```

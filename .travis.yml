@@ -4,9 +4,9 @@ services: docker
 
 env:
   - VARIANT=base
+  - VARIANT=node-8
   
 before_script:
-  - env | sort
   - cd "$VARIANT"
   - image="richardregeer/web-development:${VARIANT}"
  
