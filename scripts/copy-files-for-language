@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ "$LANGUAGE" = "php" ]; then
-  cp -R ./${LANGUAGE}/etc/* "$VARIANT"
-  cp -R ./${LANGUAGE}/example/* "$VARIANT"
+  cp -R -v ${LANGUAGE}/etc/* "$VARIANT"
+  cp -R -v ${LANGUAGE}/example/* "$VARIANT"
 
   echo "Copied docker files for ${LANGUAGE}"
 else
