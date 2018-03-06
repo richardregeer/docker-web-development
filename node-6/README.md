@@ -1,4 +1,4 @@
-# Docker web development Node 8
+# Docker web development Node 6
 This container can be used for doing all your node web development needs. Like running unit tests, linting, creating coverage reports and running your application with [nodejs](https://nodejs.org/en/).
 
 ## Installed software:
