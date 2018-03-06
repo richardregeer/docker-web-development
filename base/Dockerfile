@@ -29,7 +29,11 @@ RUN apt-get update --fix-missing \
     libunwind8 \
     libicu55 \
     jq \
-  && curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}-ce.tgz \
+  && apt-get clean \
+  && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*  
+
+# Install node and docker client
+RUN curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}-ce.tgz \
   && tar xzvf docker-${DOCKER_VERSION}-ce.tgz \
   && mv docker/docker /usr/local/bin \
   && curl -LOk https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz \
@@ -38,7 +42,6 @@ RUN apt-get update --fix-missing \
   && npm install gulp@3.9.1 -g \
   && npm install uuid@3.1.0 -g \
   && npm cache clean --force \
-  && apt-get clean \
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 WORKDIR /development

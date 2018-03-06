@@ -9,6 +9,7 @@ before_script:
   - env | sort
   - cd "$VARIANT"
   - image="richardregeer/web-development:${VARIANT}"
+  - docker pull "$image"
  
 script:
   - docker build -t "$image" .
