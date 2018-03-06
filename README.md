@@ -7,5 +7,6 @@
 - [PHP7.2](./php-7.2)
 
 ## Nodejs
+- [Node 6](./node-6)
 - [Node 8](./node-8)
 - [Node 9](./node-9)
