@@ -1,0 +1,13 @@
+#!/bin/bash
+
+LANGUAGE=php
+VARIANT=php-7.0
+
+if [ "$LANGUAGE" = "php" ]; then
+  cp -R "$LANGUAGE"/etc/* "$VARIANT"
+  cp -R "$LANGUAGE"/example/* "$VARIANT"
+
+  echo "Copied docker files for ${LANGUAGE}"
+else
+  echo "No files to copy for language ${LANGUAGE}"
+fi

@@ -6,9 +6,11 @@ env:
   - VARIANT=base
   - VARIANT=node-6
   - VARIANT=node-8
-  - VARIANT=node-9
+  - VARIANT=node-9 
+  - VARIANT=php-7.0 LANGUAGE=php
   
 before_script:
+  - scripts/copy-files-for-language
   - cd "$VARIANT"
   - image="richardregeer/web-development:${VARIANT}"
  
