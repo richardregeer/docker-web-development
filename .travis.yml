@@ -4,13 +4,16 @@ services: docker
 
 env:
   - VARIANT=base
-  - VARIANT=node-6
   
 before_script:
-  - cd base
-
-script:
-  - docker build -t test .
+  - env | sort
+  - cd "$VARIANT"
+  - image="richardregeer/web-development:${VARIANT}"
  
+script:
+  - docker build -t "$image" .
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - docker push "$image"
+
 after_script:
-  - docker images
+- docker images

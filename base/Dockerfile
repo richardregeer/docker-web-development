@@ -4,7 +4,8 @@ LABEL maintainer "Richard Regeer" \
       email="rich2309@gmail.com"
 
 ENV DOCKER_VERSION 17.04.0
-  
+ENV NODE_VERSION 8.9.4
+
 # Install development tools 
 RUN apt-get update --fix-missing \ 
   && apt-get install -y curl \
@@ -27,24 +28,17 @@ RUN apt-get update --fix-missing \
     libcurl3 \
     libunwind8 \
     libicu55 \
+    jq \
   && curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}-ce.tgz \
   && tar xzvf docker-${DOCKER_VERSION}-ce.tgz \
   && mv docker/docker /usr/local/bin \
+  && curl -LOk https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz \
+  && tar -C /usr/local --strip-components 1 -xzf node-v$NODE_VERSION-linux-x64.tar.gz \
+  && rm -rf /node-v$NODE_VERSION-linux-x64.tar.gz \
+  && npm install gulp@3.9.1 -g \
+  && npm install uuid@3.1.0 -g \
+  && npm cache clean --force \
   && apt-get clean \
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-
-ENV NODE_VERSION 8.9.4
-ENV YARN_VERSION 1.5.1
-
-# Install nodejs and yarn and nodejs tools
-RUN curl -LOk https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz \
-  && tar -C /usr/local --strip-components 1 -xzf node-v$NODE_VERSION-linux-x64.tar.gz \
-  && curl -fSL -o yarn.js https://yarnpkg.com/downloads/$YARN_VERSION/yarn-legacy-$YARN_VERSION.js \
-  && mv yarn.js /usr/local/bin/yarn \
-  && chmod +x /usr/local/bin/yarn \
-  && rm -rf /node-v$NODE_VERSION-linux-x64.tar.gz \
-  && yarn global add gulp@3.9.1 \
-  && yarn global add uuid@3.1.0 \
-  && yarn cache clean
 
 WORKDIR /development

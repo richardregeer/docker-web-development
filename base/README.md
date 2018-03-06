@@ -1,23 +1,50 @@
 # Docker web development
-This container is used as a base for different web development environments and contains tools that can help with your web development projects. 
+This image contains a lot of tools that can help you develop your application.  
+Also this image can be used as a base of other image.
 
-## Software installed:
- - node 6.11.4
- - yarn 1.2.1
+This is an image for development purpose only it's not optimized for size and not suitible for production environments. 
+
+# Software installed
+It contains database clients, http clients, benchmark tools, taskrunners, version control clients and text editors. Basically all you need to start developing without installing all tools everytime and packed in one easy to use docker image.
+
+## Datastore clients
+ - mysql client 5.7.21
+ - postgress sql client 9.5.12
+ - sqlite3 3.11.0
+ - redis cli 3.0.6
+
+## Script runners
+ - node 8.9.4
+ - python 3.5.2
+
+## Task runners
  - gulp 3.9.1
- - uuid
- - powershell 6
- - mysql client
- - postgress sql client
- - sqlite3
- - redis-tools
- - apache bench
- - curl
- - wget
- - vim 
- - nano
- - git 
- - subversion
- - bzip2
- - zip 
- - unzip
+
+## Http clients
+ - curl 7.47.0
+ - wget 1.17.1
+
+## Text editors
+ - vim 7.4
+ - nano 2.5.3
+
+## Version control clients
+ - git 2.7.4
+ - subversion 1.9.3
+
+## Compression
+ - bzip2 1.0.6
+ - zip 3.0
+ - unzip 6.00
+
+## Benchmark
+ - apache bench 2.4.18
+
+## Number generator
+ - uuid 3.1.0
+
+## Json tools
+ - jq 1.5
+
+## Docker tools
+ - docker client 17.04
