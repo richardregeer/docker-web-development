@@ -4,6 +4,7 @@ services: docker
 
 env:
   - VARIANT=base
+  - VARIANT=node-6
   - VARIANT=node-8
   - VARIANT=node-9
   
