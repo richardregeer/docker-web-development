@@ -5,6 +5,7 @@ services: docker
 env:
   - VARIANT=base
   - VARIANT=node-8
+  - VARIANT=node-9
   
 before_script:
   - cd "$VARIANT"
