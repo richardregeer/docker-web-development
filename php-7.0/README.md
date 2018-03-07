@@ -43,9 +43,6 @@ Use a shared volume from a data container or host volume to share your code and 
 Make sure the -rm option is used to destroy the container when it's finished.
 
 ```bash
-# Start a node application in the container.
-docker run -it --rm --volume=</path/to/your/code>:/development richardregeer/web-development:php-7.0 node <your-application.js>
-
 # Start a php web application in the container.
 docker run -it --rm --volume=</path/to/your/code>:/development -p 8000:8000 richardregeer/web-development:php-7.0 php -S 0.0.0.0:8000
 ```
