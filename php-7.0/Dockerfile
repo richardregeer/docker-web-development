@@ -7,9 +7,9 @@ ENV PHP_VERSION 7.0.26
 ENV XDEBUG_VERSION 2_5_5
 
 # Copy phpinfo test page and php configuration
-COPY phpinfo /usr/local/src/phpinfo
-COPY php.ini /usr/local/etc/php.ini
-COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY ./phpinfo /usr/local/src/phpinfo
+COPY ./php.ini /usr/local/etc/php.ini
+COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 # Install php, composer and xdebug
 RUN curl -o php-$PHP_VERSION.tar.gz -L http://php.net/get/php-$PHP_VERSION.tar.gz/from/this/mirror \
