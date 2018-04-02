@@ -9,7 +9,6 @@ env:
   - VARIANT=node-9 
   - VARIANT=php-7.0 LANGUAGE=php
   - VARIANT=php-7.1 LANGUAGE=php
-  - VARIANT=php-7.2 LANGUAGE=php
 
 before_script:
   - scripts/copy-files-for-language
