@@ -4,14 +4,14 @@ LABEL maintainer "Richard Regeer" \
       email="rich2309@gmail.com"
 
 ENV DOCKER_VERSION 17.04.0
-ENV NODE_VERSION 8.9.4
+ENV NODE_VERSION 8.11.1
 
-# Install development tools 
-RUN apt-get update --fix-missing \ 
+# Install development tools
+RUN apt-get update --fix-missing \
   && apt-get install -y curl \
     apt-transport-https \
-    mysql-client-5.7 \ 
-    postgresql-client \ 
+    mysql-client-5.7 \
+    postgresql-client \
     sqlite3 \
     redis-tools \
     apache2-utils \
@@ -30,7 +30,7 @@ RUN apt-get update --fix-missing \
     libicu55 \
     jq \
   && apt-get clean \
-  && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*  
+  && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # Install node and docker client
 RUN curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}-ce.tgz \

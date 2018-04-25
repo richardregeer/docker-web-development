@@ -3,7 +3,7 @@ FROM richardregeer/web-development:base
 LABEL maintainer "Richard Regeer" \
       email="rich2309@gmail.com"
 
-ENV PHP_VERSION 7.1.15
+ENV PHP_VERSION 7.1.16
 ENV XDEBUG_VERSION 2_5_5
 
 # Copy phpinfo test page and php configuration
@@ -78,6 +78,6 @@ RUN curl -o php-$PHP_VERSION.tar.gz -L http://php.net/get/php-$PHP_VERSION.tar.g
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # Expose the ports for php info.
-EXPOSE 8000 
+EXPOSE 8000
 
 WORKDIR /development
