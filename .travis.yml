@@ -2,19 +2,9 @@ language: bash
 
 services: docker
 
-env:
-  - VARIANT=base
-  - VARIANT=node-6
-  - VARIANT=node-8
-  - VARIANT=node-9 
-  - VARIANT=php-7.0 LANGUAGE=php
-  - VARIANT=php-7.1 LANGUAGE=php
-
 before_script:
-  - scripts/copy-files-for-language
-  - cd "$VARIANT"
-  - image="richardregeer/web-development:${VARIANT}"
- 
+  - image="richardregeer/web-development:base"
+
 script:
   - docker build -t "$image" .
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
