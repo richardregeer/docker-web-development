@@ -18,6 +18,7 @@ It contains database clients, http clients, benchmark tools, taskrunners, versio
 ## Script runners
  - node 8.9.4
  - python 3.5.2
+ - python 2.7.12
 
 ## Task runners
  - gulp 3.9.1

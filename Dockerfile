@@ -28,17 +28,20 @@ RUN apt-get update --fix-missing \
     libcurl3 \
     libunwind8 \
     libicu55 \
+    python \
     jq \
   && apt-get clean \
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-# Install node and docker client
+# Install docker client
 RUN curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}-ce.tgz \
   && tar xzvf docker-${DOCKER_VERSION}-ce.tgz \
   && mv docker/docker /usr/local/bin \
+  # Install node
   && curl -LOk https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz \
   && tar -C /usr/local --strip-components 1 -xzf node-v$NODE_VERSION-linux-x64.tar.gz \
   && rm -rf /node-v$NODE_VERSION-linux-x64.tar.gz \
+  # Install nodejs tools
   && npm install gulp@3.9.1 -g \
   && npm install uuid@3.1.0 -g \
   && npm cache clean --force \
