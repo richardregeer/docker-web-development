@@ -30,6 +30,7 @@ RUN apt-get update --fix-missing \
     libunwind8 \
     libicu55 \
     python \
+    make \
     jq \
   && apt-get clean \
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
