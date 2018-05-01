@@ -4,16 +4,21 @@
 This image contains a lot of tools that can help you develop your application.  
 Also this image can be used as a base of other image.
 
-This is an image for development purpose only it's not optimized for size and not suitible for production environments.
+This is an image for development purpose only it's not optimized for size and not suitable for production environments.
 
 # Software installed
-It contains database clients, http clients, benchmark tools, taskrunners, version control clients and text editors. Basically all you need to start developing without installing all tools everytime and packed in one easy to use docker image.
+It contains database clients, http clients, benchmark tools, task runners, version control clients and text editors. Basically all you need to start developing without installing all tools every time and packed in one easy to use docker image.
 
 ## Datastore clients
  - mysql client 5.7.21
  - postgress sql client 9.5.12
  - sqlite3 3.11.0
  - redis cli 3.0.6
+
+## Package managers
+ - apt 1.2.26
+ - npm 5.6.0 (nodejs)
+ - yarn 1.6.0 (nodejs)
 
 ## Script runners
  - node 8.9.4
