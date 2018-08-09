@@ -6,7 +6,7 @@ before_script:
   - image="richardregeer/web-development:base"
 
 script:
-  - docker build -t "$image" .
+  - docker build -t "$image" -t "richardregeer/web-development" -t "latest" .
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker push "$image"
 
