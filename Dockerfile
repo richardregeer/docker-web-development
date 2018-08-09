@@ -4,8 +4,8 @@ LABEL maintainer "Richard Regeer" \
       email="rich2309@gmail.com"
 
 ENV DOCKER_VERSION 17.04.0
-ENV NODE_VERSION 8.11.1
-ENV YARN_VERSION 1.6.0
+ENV NODE_VERSION 8.11.3
+ENV YARN_VERSION 1.9.4
 
 # Install development tools
 RUN apt-get update --fix-missing \
