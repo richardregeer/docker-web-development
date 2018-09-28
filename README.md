@@ -18,10 +18,10 @@ It contains database clients, http clients, benchmark tools, task runners, versi
 ## Package managers
  - apt 1.2.26
  - npm 5.6.0 (nodejs)
- - yarn 1.6.0 (nodejs)
+ - yarn 1.10.1 (nodejs)
 
 ## Script runners
- - node 8.9.4
+ - node 8.12.0
  - python 3.5.2
  - python 2.7.12
 
