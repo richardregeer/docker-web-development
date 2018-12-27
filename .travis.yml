@@ -9,6 +9,7 @@ script:
   - docker build -t "$image" -t "richardregeer/web-development" -t "richardregeer/web-development:latest" .
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker push "$image"
-
+  - docker push "richardregeer/web-development"
+  - docker push "richardregeer/web-development:latest"
 after_script:
 - docker images

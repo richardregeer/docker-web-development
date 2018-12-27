@@ -4,8 +4,8 @@ LABEL maintainer "Richard Regeer" \
       email="rich2309@gmail.com"
 
 ENV DOCKER_VERSION 17.04.0
-ENV NODE_VERSION 8.12.0
-ENV YARN_VERSION 1.10.1
+ENV NODE_VERSION 10.15.0
+ENV YARN_VERSION 1.12.3
 
 # Install development tools
 RUN apt-get update --fix-missing \
@@ -47,7 +47,6 @@ RUN curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSI
   && mv yarn.js /usr/local/bin/yarn \
   && chmod +x /usr/local/bin/yarn \
   # Install nodejs tools
-  && npm install gulp@3.9.1 -g \
   && npm install uuid@3.1.0 -g \
   && npm cache clean --force \
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
