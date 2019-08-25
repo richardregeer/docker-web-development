@@ -3,9 +3,9 @@ FROM ubuntu:16.04
 LABEL maintainer "Richard Regeer" \
       email="rich2309@gmail.com"
 
-ENV DOCKER_VERSION 17.04.0
-ENV NODE_VERSION 10.15.0
-ENV YARN_VERSION 1.12.3
+ENV DOCKER_VERSION 18.06.3
+ENV NODE_VERSION 10.16.3
+ENV YARN_VERSION 1.17.3
 
 # Install development tools
 RUN apt-get update --fix-missing \
@@ -36,7 +36,7 @@ RUN apt-get update --fix-missing \
   && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # Install docker client
-RUN curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}-ce.tgz \
+RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}-ce.tgz \
   && tar xzvf docker-${DOCKER_VERSION}-ce.tgz \
   && mv docker/docker /usr/local/bin \
   # Install node
