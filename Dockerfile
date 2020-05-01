@@ -3,8 +3,8 @@ FROM ubuntu:16.04
 LABEL maintainer "Richard Regeer" \
       email="rich2309@gmail.com"
 
-ENV DOCKER_VERSION 18.06.3
-ENV NODE_VERSION 10.16.3
+ENV DOCKER_VERSION 19.03.8
+ENV NODE_VERSION 12.16.3
 ENV YARN_VERSION 1.17.3
 
 # Install development tools
